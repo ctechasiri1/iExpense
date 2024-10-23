@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		51A955A62CC747ED00E58E89 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955A52CC747ED00E58E89 /* iExpenseApp.swift */; };
-		51A955A82CC747ED00E58E89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955A72CC747ED00E58E89 /* ContentView.swift */; };
+		51A955A82CC747ED00E58E89 /* ClassAndStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955A72CC747ED00E58E89 /* ClassAndStructs.swift */; };
 		51A955AA2CC747EF00E58E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A955A92CC747EF00E58E89 /* Assets.xcassets */; };
 		51A955AD2CC747EF00E58E89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A955AC2CC747EF00E58E89 /* Preview Assets.xcassets */; };
+		51A955B42CC7521A00E58E89 /* ShowingAndHidingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B32CC7521A00E58E89 /* ShowingAndHidingViews.swift */; };
+		51A955B62CC753CB00E58E89 /* OnDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B52CC753CB00E58E89 /* OnDelete.swift */; };
+		51A955B82CC7558B00E58E89 /* UserDefaultsLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B72CC7558B00E58E89 /* UserDefaultsLesson.swift */; };
+		51A955BA2CC7580C00E58E89 /* CodableLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B92CC7580C00E58E89 /* CodableLesson.swift */; };
+		51A955BC2CC8181900E58E89 /* iExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955BB2CC8181900E58E89 /* iExpenseView.swift */; };
+		51D9FEE92CC81FCB00C826DC /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9FEE82CC81FCB00C826DC /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		51A955A22CC747ED00E58E89 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A955A52CC747ED00E58E89 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
-		51A955A72CC747ED00E58E89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		51A955A72CC747ED00E58E89 /* ClassAndStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAndStructs.swift; sourceTree = "<group>"; };
 		51A955A92CC747EF00E58E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51A955AC2CC747EF00E58E89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		51A955B32CC7521A00E58E89 /* ShowingAndHidingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingAndHidingViews.swift; sourceTree = "<group>"; };
+		51A955B52CC753CB00E58E89 /* OnDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDelete.swift; sourceTree = "<group>"; };
+		51A955B72CC7558B00E58E89 /* UserDefaultsLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsLesson.swift; sourceTree = "<group>"; };
+		51A955B92CC7580C00E58E89 /* CodableLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLesson.swift; sourceTree = "<group>"; };
+		51A955BB2CC8181900E58E89 /* iExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseView.swift; sourceTree = "<group>"; };
+		51D9FEE82CC81FCB00C826DC /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +64,13 @@
 			isa = PBXGroup;
 			children = (
 				51A955A52CC747ED00E58E89 /* iExpenseApp.swift */,
-				51A955A72CC747ED00E58E89 /* ContentView.swift */,
+				51A955A72CC747ED00E58E89 /* ClassAndStructs.swift */,
+				51A955B32CC7521A00E58E89 /* ShowingAndHidingViews.swift */,
+				51A955B52CC753CB00E58E89 /* OnDelete.swift */,
+				51A955B72CC7558B00E58E89 /* UserDefaultsLesson.swift */,
+				51A955B92CC7580C00E58E89 /* CodableLesson.swift */,
+				51A955BB2CC8181900E58E89 /* iExpenseView.swift */,
+				51D9FEE82CC81FCB00C826DC /* AddView.swift */,
 				51A955A92CC747EF00E58E89 /* Assets.xcassets */,
 				51A955AB2CC747EF00E58E89 /* Preview Content */,
 			);
@@ -137,7 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51A955A82CC747ED00E58E89 /* ContentView.swift in Sources */,
+				51A955B42CC7521A00E58E89 /* ShowingAndHidingViews.swift in Sources */,
+				51A955B82CC7558B00E58E89 /* UserDefaultsLesson.swift in Sources */,
+				51A955BC2CC8181900E58E89 /* iExpenseView.swift in Sources */,
+				51A955BA2CC7580C00E58E89 /* CodableLesson.swift in Sources */,
+				51D9FEE92CC81FCB00C826DC /* AddView.swift in Sources */,
+				51A955B62CC753CB00E58E89 /* OnDelete.swift in Sources */,
+				51A955A82CC747ED00E58E89 /* ClassAndStructs.swift in Sources */,
 				51A955A62CC747ED00E58E89 /* iExpenseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

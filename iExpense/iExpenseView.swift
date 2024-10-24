@@ -42,6 +42,7 @@ class Expenses {
         didSet {
             // stores the data
             if let encoded = try? JSONEncoder().encode(items) {
+                // UserDefaults is where data is stored and can be referenced by its key
                 UserDefaults.standard.set(encoded, forKey: "Items")
             }
         }
@@ -81,6 +82,7 @@ struct iExpenseView: View {
                         Text(item.amount, format: .currency(code: "USD"))
                     }
                 }
+                //This modifier only exists for ForEach
                 .onDelete(perform: removeItems)
             }
             .navigationTitle("iExpense")

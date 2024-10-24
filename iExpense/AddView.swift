@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//This creates a new screen view
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
     

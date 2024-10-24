@@ -9,6 +9,7 @@ import SwiftUI
 
 //This creates a new screen view
 struct AddView: View {
+    //This creates a dismiss action
     @Environment(\.dismiss) var dismiss
     
     @State private var name = ""

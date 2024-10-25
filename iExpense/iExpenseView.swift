@@ -13,7 +13,6 @@ import SwiftUI
  -Codable means the struct conforma to a protocol, where it's id can
  be decoded and encoded
  */
-
 struct ExpenseItem: Identifiable, Codable {
     var id = UUID()
     let name: String
@@ -60,6 +59,30 @@ class Expenses {
     }
 }
 
+struct colorChangeModifier: ViewModifier {
+    
+    var amount: Double
+    
+    func body(content: Content) -> some View {
+            if amount < 10 {
+                content
+                    .foregroundColor(Color.red)
+            } else if amount < 100 {
+                content
+                    .foregroundColor(Color.blue)
+            } else if amount > 100 {
+                content
+                    .foregroundColor(Color.green)
+            }
+    }
+}
+
+extension View {
+    func colorChange(amount: Double) -> some View {
+        self.modifier(colorChangeModifier(amount: amount))
+    }
+}
+
 struct iExpenseView: View {
     
     @State private var expenses = Expenses()
@@ -81,6 +104,7 @@ struct iExpenseView: View {
                         Spacer()
                         
                         Text(item.amount, format: .currency(code: item.currency))
+                            .colorChange(amount: item.amount)
                     }
                 }
                 //This modifier only exists for ForEach
@@ -104,7 +128,16 @@ struct iExpenseView: View {
         //atOffsets deletes items in array by their indices
         expenses.items.remove(atOffsets: offsets)
     }
+    
+    func styleBasedOnPrice() {
+        for item in expenses.items {
+            if item.amount < 10 {
+                
+            }
+        }
+    }
 }
+
 
 #Preview {
     iExpenseView()

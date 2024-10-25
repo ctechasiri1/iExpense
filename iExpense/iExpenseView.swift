@@ -19,6 +19,7 @@ struct ExpenseItem: Identifiable, Codable {
     let name: String
     let type: String
     let amount: Double
+    let currency: String
 }
 
 /*
@@ -79,7 +80,7 @@ struct iExpenseView: View {
                         
                         Spacer()
                         
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Text(item.amount, format: .currency(code: item.currency))
                     }
                 }
                 //This modifier only exists for ForEach

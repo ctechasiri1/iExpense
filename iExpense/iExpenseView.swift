@@ -35,7 +35,6 @@ struct ExpenseItem: Identifiable, Codable {
     data
  -try? will throw an error if the data can't be unwrapped
  */
-
 @Observable
 class Expenses {
     var items = [ExpenseItem]() {
@@ -43,13 +42,17 @@ class Expenses {
             // stores the data
             if let encoded = try? JSONEncoder().encode(items) {
                 // UserDefaults is where data is stored and can be referenced by its key
-                UserDefaults.standard.set(encoded, forKey: "Items")
+                UserDefaults.standard.set(encoded, forKey: storageKey)
             }
         }
     }
-    init() {
+    
+    // able to create different places to store the data by making it dynamic
+    private let storageKey: String
+    init(storageKey: String) {
+        self.storageKey = storageKey
         // calls the stored data
-        if let savedItems = UserDefaults.standard.data(forKey: "Items") {
+        if let savedItems = UserDefaults.standard.data(forKey: storageKey) {
             if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
                 items = decodedItems
                 return
@@ -85,56 +88,83 @@ extension View {
 
 struct iExpenseView: View {
     
-    @State private var expenses = Expenses()
+    @State private var personalExpenses = Expenses(storageKey: "PersonalItems")
+    @State private var businessExpenses = Expenses(storageKey: "BusinessItems")
     
     @State private var showingAddExpense = false
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items, id: \.id) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            
-                            Text(item.type)
+                if !personalExpenses.items.isEmpty {
+                    Section("Personal Expense") {
+                        ForEach(personalExpenses.items, id: \.id) { item in
+                            if item.type == "Personal" {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(item.name)
+                                            .font(.headline)
+                                        
+                                        Text(item.type)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text(item.amount, format: .currency(code: item.currency))
+                                        .colorChange(amount: item.amount)
+                                }
+                            }
                         }
                         
-                        Spacer()
-                        
-                        Text(item.amount, format: .currency(code: item.currency))
-                            .colorChange(amount: item.amount)
+                        //This modifier only exists for ForEach
+                        .onDelete(perform: removePersonalItems)
                     }
                 }
-                //This modifier only exists for ForEach
-                .onDelete(perform: removeItems)
+                if !businessExpenses.items.isEmpty {
+                    Section("Business Expense") {
+                        ForEach(businessExpenses.items, id: \.id) { item in
+                            if item.type == "Business" {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(item.name)
+                                            .font(.headline)
+                                        
+                                        Text(item.type)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text(item.amount, format: .currency(code: item.currency))
+                                        .colorChange(amount: item.amount)
+                                }
+                            }
+                        }
+                        //This modifier only exists for ForEach
+                        .onDelete(perform: removeBusinessItems)
+                    }
+                }
             }
             .navigationTitle("iExpense")
             .toolbar {
                 Button("Add Expense", systemImage: "plus") {
                     showingAddExpense = true
-
                 }
             }
             .sheet(isPresented: $showingAddExpense, content: {
                 //this calls the AddView Swift view
-                AddView(expenses: expenses)
+                AddView(personalExpenses: personalExpenses, businessExpenses: businessExpenses)
             })
         }
     }
     // IndexSet is a collection of integer indices representing positions in an array
-    func removeItems(at offsets: IndexSet) {
+    func removePersonalItems(at offsets: IndexSet) {
         //atOffsets deletes items in array by their indices
-        expenses.items.remove(atOffsets: offsets)
+        personalExpenses.items.remove(atOffsets: offsets)
     }
     
-    func styleBasedOnPrice() {
-        for item in expenses.items {
-            if item.amount < 10 {
-                
-            }
-        }
+    func removeBusinessItems(at offsets: IndexSet) {
+        //atOffsets deletes items in array by their indices
+        businessExpenses.items.remove(atOffsets: offsets)
     }
 }
 

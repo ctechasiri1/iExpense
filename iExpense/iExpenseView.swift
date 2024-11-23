@@ -86,8 +86,20 @@ extension View {
     }
 }
 
-struct iExpenseView: View {
+struct dismissView: View {
+    @Environment(\.dismiss) var dismiss
     
+    var body: some View {
+        Button {
+            dismiss()
+        } label: {
+            Text("Cancel")
+        }
+
+    }
+}
+
+struct iExpenseView: View {
     @State private var personalExpenses = Expenses(storageKey: "PersonalItems")
     @State private var businessExpenses = Expenses(storageKey: "BusinessItems")
     
@@ -96,6 +108,9 @@ struct iExpenseView: View {
     var body: some View {
         NavigationStack {
             List {
+                NavigationLink("Add Expense") {
+                    AddView(personalExpenses: personalExpenses, businessExpenses: businessExpenses)
+                }
                 if !personalExpenses.items.isEmpty {
                     Section("Personal Expense") {
                         ForEach(personalExpenses.items, id: \.id) { item in
@@ -120,6 +135,7 @@ struct iExpenseView: View {
                         .onDelete(perform: removePersonalItems)
                     }
                 }
+                
                 if !businessExpenses.items.isEmpty {
                     Section("Business Expense") {
                         ForEach(businessExpenses.items, id: \.id) { item in
@@ -145,15 +161,15 @@ struct iExpenseView: View {
                 }
             }
             .navigationTitle("iExpense")
-            .toolbar {
-                Button("Add Expense", systemImage: "plus") {
-                    showingAddExpense = true
-                }
-            }
-            .sheet(isPresented: $showingAddExpense, content: {
-                //this calls the AddView Swift view
-                AddView(personalExpenses: personalExpenses, businessExpenses: businessExpenses)
-            })
+//            .toolbar {
+//                Button("Add Expense", systemImage: "plus") {
+//                    showingAddExpense = true
+//                }
+//            }
+//            .sheet(isPresented: $showingAddExpense, content: {
+//                //this calls the AddView Swift view
+//                AddView(personalExpenses: personalExpenses, businessExpenses: businessExpenses)
+//            })
         }
     }
     // IndexSet is a collection of integer indices representing positions in an array
@@ -167,7 +183,6 @@ struct iExpenseView: View {
         businessExpenses.items.remove(atOffsets: offsets)
     }
 }
-
 
 #Preview {
     iExpenseView()

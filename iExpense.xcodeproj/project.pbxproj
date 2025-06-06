@@ -15,8 +15,11 @@
 		51A955B62CC753CB00E58E89 /* OnDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B52CC753CB00E58E89 /* OnDelete.swift */; };
 		51A955B82CC7558B00E58E89 /* UserDefaultsLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B72CC7558B00E58E89 /* UserDefaultsLesson.swift */; };
 		51A955BA2CC7580C00E58E89 /* CodableLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955B92CC7580C00E58E89 /* CodableLesson.swift */; };
-		51A955BC2CC8181900E58E89 /* iExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955BB2CC8181900E58E89 /* iExpenseView.swift */; };
+		51A955BC2CC8181900E58E89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A955BB2CC8181900E58E89 /* ContentView.swift */; };
 		51D9FEE92CC81FCB00C826DC /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9FEE82CC81FCB00C826DC /* AddView.swift */; };
+		51E063132DEFC647007A90DD /* iExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E063122DEFC647007A90DD /* iExpenseModel.swift */; };
+		51E063172DEFC834007A90DD /* iExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E063162DEFC834007A90DD /* iExpenseViewModel.swift */; };
+		51E063192DEFDC16007A90DD /* iExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E063182DEFDC16007A90DD /* iExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +32,11 @@
 		51A955B52CC753CB00E58E89 /* OnDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDelete.swift; sourceTree = "<group>"; };
 		51A955B72CC7558B00E58E89 /* UserDefaultsLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsLesson.swift; sourceTree = "<group>"; };
 		51A955B92CC7580C00E58E89 /* CodableLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableLesson.swift; sourceTree = "<group>"; };
-		51A955BB2CC8181900E58E89 /* iExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseView.swift; sourceTree = "<group>"; };
+		51A955BB2CC8181900E58E89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		51D9FEE82CC81FCB00C826DC /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		51E063122DEFC647007A90DD /* iExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseModel.swift; sourceTree = "<group>"; };
+		51E063162DEFC834007A90DD /* iExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseViewModel.swift; sourceTree = "<group>"; };
+		51E063182DEFDC16007A90DD /* iExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +75,10 @@
 				51A955B52CC753CB00E58E89 /* OnDelete.swift */,
 				51A955B72CC7558B00E58E89 /* UserDefaultsLesson.swift */,
 				51A955B92CC7580C00E58E89 /* CodableLesson.swift */,
-				51A955BB2CC8181900E58E89 /* iExpenseView.swift */,
+				51A955BB2CC8181900E58E89 /* ContentView.swift */,
+				51E063182DEFDC16007A90DD /* iExpenseView.swift */,
+				51E063122DEFC647007A90DD /* iExpenseModel.swift */,
+				51E063162DEFC834007A90DD /* iExpenseViewModel.swift */,
 				51D9FEE82CC81FCB00C826DC /* AddView.swift */,
 				51A955A92CC747EF00E58E89 /* Assets.xcassets */,
 				51A955AB2CC747EF00E58E89 /* Preview Content */,
@@ -157,12 +166,15 @@
 			files = (
 				51A955B42CC7521A00E58E89 /* ShowingAndHidingViews.swift in Sources */,
 				51A955B82CC7558B00E58E89 /* UserDefaultsLesson.swift in Sources */,
-				51A955BC2CC8181900E58E89 /* iExpenseView.swift in Sources */,
+				51E063192DEFDC16007A90DD /* iExpenseView.swift in Sources */,
+				51A955BC2CC8181900E58E89 /* ContentView.swift in Sources */,
 				51A955BA2CC7580C00E58E89 /* CodableLesson.swift in Sources */,
 				51D9FEE92CC81FCB00C826DC /* AddView.swift in Sources */,
 				51A955B62CC753CB00E58E89 /* OnDelete.swift in Sources */,
+				51E063132DEFC647007A90DD /* iExpenseModel.swift in Sources */,
 				51A955A82CC747ED00E58E89 /* ClassAndStructs.swift in Sources */,
 				51A955A62CC747ED00E58E89 /* iExpenseApp.swift in Sources */,
+				51E063172DEFC834007A90DD /* iExpenseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
